@@ -109,12 +109,16 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "assets")
- 
-]
+if DEBUG:
+
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, "assets")
+    ]
+else:    
+    STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+
+
 
 PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'serviceworker.js')
 
