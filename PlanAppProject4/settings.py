@@ -14,7 +14,7 @@ SECRET_KEY = 'ar86q^_rg3+%3z&$h@7fky0x@xu+7(f=(pf-2mrb*$!rwz-gm2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['planappnicolasclimb.herokuapp.com/']
+ALLOWED_HOSTS = ['planappnicolasclimb.herokuapp.com']
 
 
 # Application definition
