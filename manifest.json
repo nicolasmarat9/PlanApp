@@ -7,7 +7,7 @@
     "scope": "/",
     "dir": "ltr",
     "lang": "en-US",    
-    "start_url": "/home.html",
+    "start_url": "/planappnicolasclimb.herokuapp.com",
     "description": "training plan application",
     "orientation": "any",
     "prefer_related_applications": true,
