@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Signup</title>
+    <link rel="stylesheet" type="text/css"   href="/static/indexs.css"/>
+
+</head>
+<body>
+
+    <div class= "container" >
+        <div class= "signup" >
+            <div class= "title" >
+                <h1>Signup form</h1>
+            </div>   
+            <form class="site-form" action="/login/signup/" method="post">
+                {% csrf_token %}
+                {{form}}
+                <input type="submit" value="Signup">
+            </form>
+            <div class= "login" >
+                <a href="{% url 'login:signin' %}" >login</a>
+            </div>             
+        </div>
+    </div>
+    <div class="legend2">
+        <div class="styleleg">
+        </div>    
+    </div>    
+        
+    <div class="legend">
+        <div class= "logout">                     
+        </div>
+        <div class= "logo">  
+            <a  href="{% url 'Calendar:home' %}">
+                <img src="/static/images/logoplanapp3.png" height="90px" />
+            </a>     
+        </div>        
+    </div>    
+    
+    
+</body>
+</html>

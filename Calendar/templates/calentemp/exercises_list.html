@@ -1,0 +1,499 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>exercise</title>
+    <link rel="stylesheet" type="text/css"   href="/static/exerdet_list.css"/>
+
+</head>
+<body>
+    <div class= "container" >
+        <div class= "session" >
+
+   
+            
+            
+            {% for session in sessions %}
+        
+                <div class= "{{ session.color }}">
+                    <h1>{{ session.title }}</h1>
+                </div>
+
+                <form class= "result" action="{% url 'Calendar:vecro' slug=varislug2 slugb=varislug3 %}" method="post">            
+            
+                    <div class= "{{ session.slug1 }}">
+                        <h2>{{ session.exercise1 }}</h2>
+                        {% if session.slug1 == "ex1" %}
+                        <hr></hr>                          
+                            <div class= "label">                    
+                                <h3 class= "label1">Hold</h3>                    
+                                <h3 class= "label2">Rep/Time</h3>
+                                <h3 class= "label3">Weight</h3>                            
+                                <h3 class= "label4">Distance</h3>
+                                <h3 class= "label5">Notes</h3>                            
+                            </div>
+                            
+                            <div class= "rullers">
+                                <div class= "ruller1">
+                                    {% csrf_token %}
+                                    {{ form.hold1 }}
+                                </div>    
+                                <div class= "ruller2">
+                                    {% csrf_token %}
+                                    {{ form.rep1 }}
+                                </div>  
+                                <div class= "ruller3">
+                                    {% csrf_token %}
+                                    {{ form.weight1 }}
+                                </div>    
+                                <div class= "ruller4">
+                                    {% csrf_token %}
+                                    {{ form.dist1 }}
+                                </div>  
+                                <div class= "ruller5">
+                                    {% csrf_token %}
+                                    {{ form.note1 }}
+                                </div>
+                                
+                            </div>                           
+                        {% endif %}    
+                    </div>           
+                    <div class= "{{ session.slug2 }}">                    
+                        <h2>{{ session.exercise2 }}</h2>
+                        {% if session.slug2 == "ex2" %}
+                        <hr></hr>                            
+                            <div class= "label">                    
+                                <h3 class= "label1">Hold</h3>                    
+                                <h3 class= "label2">Rep/Time</h3>
+                                <h3 class= "label3">Weight</h3>                            
+                                <h3 class= "label4">Distance</h3>
+                                <h3 class= "label5">Notes</h3>                            
+                            </div>                               
+                            <div class= "rullers">
+                                <div class= "ruller1">
+                                    {% csrf_token %}
+                                    {{ form.hold2 }}
+                                </div>    
+                                <div class= "ruller2">
+                                    {% csrf_token %}
+                                    {{ form.rep2 }}
+                                </div>  
+                                <div class= "ruller3">
+                                    {% csrf_token %}
+                                    {{ form.weight2 }}
+                                </div>    
+                                <div class= "ruller4">
+                                    {% csrf_token %}
+                                    {{ form.dist2 }}
+                                </div>  
+                                <div class= "ruller5">
+                                    {% csrf_token %}
+                                    {{ form.note2 }}
+                                </div>  
+                            </div>   
+                        {% endif %}                  
+                    </div>           
+                    <div class= "{{ session.slug3 }}">                     
+                        <h2>{{ session.exercise3 }}</h2>
+                        {% if session.slug3 == "ex3" %}
+                        <hr></hr>                            
+                            <div class= "label">                    
+                                <h3 class= "label1">Hold</h3>                    
+                                <h3 class= "label2">Rep/Time</h3>
+                                <h3 class= "label3">Weight</h3>                            
+                                <h3 class= "label4">Distance</h3>
+                                <h3 class= "label5">Notes</h3>                            
+                            </div>                             
+                            <div class= "rullers">
+                                <div class= "ruller1">
+                                    {% csrf_token %}
+                                    {{ form.hold3 }}
+                                </div>    
+                                <div class= "ruller2">
+                                    {% csrf_token %}
+                                    {{ form.rep3 }}
+                                </div>  
+                                <div class= "ruller3">
+                                    {% csrf_token %}
+                                    {{ form.weight3 }}
+                                </div>    
+                                <div class= "ruller4">
+                                    {% csrf_token %}
+                                    {{ form.dist3 }}
+                                </div>  
+                                <div class= "ruller5">
+                                    {% csrf_token %}
+                                    {{ form.note3 }}
+                                </div>  
+                            </div>   
+                        {% endif %}                  
+                    </div>     
+                    <div class= "{{ session.slug4 }}">                     
+                        <h2>{{ session.exercise4 }}</h2>
+                        {% if session.slug4 == "ex4" %}
+                        <hr></hr>                            
+                            <div class= "label">                    
+                                <h3 class= "label1">Hold</h3>                    
+                                <h3 class= "label2">Rep/Time</h3>
+                                <h3 class= "label3">Weight</h3>                            
+                                <h3 class= "label4">Distance</h3>
+                                <h3 class= "label5">Notes</h3>                            
+                            </div>                            
+                            <div class= "rullers">
+                                <div class= "ruller1">
+                                    {% csrf_token %}
+                                    {{ form.hold4 }}
+                                </div>    
+                                <div class= "ruller2">
+                                    {% csrf_token %}
+                                    {{ form.rep4 }}
+                                </div>  
+                                <div class= "ruller3">
+                                    {% csrf_token %}
+                                    {{ form.weight4 }}
+                                </div>    
+                                <div class= "ruller4">
+                                    {% csrf_token %}
+                                    {{ form.dist4 }}
+                                </div>  
+                                <div class= "ruller5">
+                                    {% csrf_token %}
+                                    {{ form.note4 }}
+                                </div>  
+                            </div>   
+                        {% endif %}               
+                    </div>     
+                    <div class= "{{ session.slug5 }}">                     
+                        <h2>{{ session.exercise5 }}</h2>
+                        {% if session.slug5 == "ex5" %}
+                        <hr></hr>                            
+                            <div class= "label">                    
+                                <h3 class= "label1">Hold</h3>                    
+                                <h3 class= "label2">Rep/Time</h3>
+                                <h3 class= "label3">Weight</h3>                            
+                                <h3 class= "label4">Distance</h3>
+                                <h3 class= "label5">Notes</h3>                            
+                            </div>                              
+                            <div class= "rullers">
+                                <div class= "ruller1">
+                                    {% csrf_token %}
+                                    {{ form.hold5 }}
+                                </div>    
+                                <div class= "ruller2">
+                                    {% csrf_token %}
+                                    {{ form.rep5 }}
+                                </div>  
+                                <div class= "ruller3">
+                                    {% csrf_token %}
+                                    {{ form.weight5 }}
+                                </div>    
+                                <div class= "ruller4">
+                                    {% csrf_token %}
+                                    {{ form.dist5 }}
+                                </div>  
+                                <div class= "ruller5">
+                                    {% csrf_token %}
+                                    {{ form.note5 }}
+                                </div>  
+                            </div>   
+                        {% endif %}              
+                    </div>     
+                    <div class= "{{ session.slug6 }}">                     
+                        <h2>{{ session.exercise6 }}</h2>
+                        {% if session.slug6 == "ex6" %}
+                        <hr></hr>                            
+                            <div class= "label">                    
+                                <h3 class= "label1">Hold</h3>                    
+                                <h3 class= "label2">Rep/Time</h3>
+                                <h3 class= "label3">Weight</h3>                            
+                                <h3 class= "label4">Distance</h3>
+                                <h3 class= "label5">Notes</h3>                            
+                            </div>                              
+                            <div class= "rullers">
+                                <div class= "ruller1">
+                                    {% csrf_token %}
+                                    {{ form.hold6 }}
+                                </div>    
+                                <div class= "ruller2">
+                                    {% csrf_token %}
+                                    {{ form.rep6 }}
+                                </div>  
+                                <div class= "ruller3">
+                                    {% csrf_token %}
+                                    {{ form.weight6 }}
+                                </div>    
+                                <div class= "ruller4">
+                                    {% csrf_token %}
+                                    {{ form.dist6 }}
+                                </div>  
+                                <div class= "ruller5">
+                                    {% csrf_token %}
+                                    {{ form.note6 }}
+                                </div>  
+                            </div>   
+                        {% endif %}                 
+                    </div>     
+                    <div class= "{{ session.slug7 }}">                     
+                        <h2>{{ session.exercise7 }}</h2>
+                        {% if session.slug7 == "ex7" %}
+                        <hr></hr>                            
+                            <div class= "label">                    
+                                <h3 class= "label1">Hold</h3>                    
+                                <h3 class= "label2">Rep/Time</h3>
+                                <h3 class= "label3">Weight</h3>                            
+                                <h3 class= "label4">Distance</h3>
+                                <h3 class= "label5">Notes</h3>                            
+                            </div>                             
+                            <div class= "rullers">
+                                <div class= "ruller1">
+                                    {% csrf_token %}
+                                    {{ form.hold7 }}
+                                </div>    
+                                <div class= "ruller2">
+                                    {% csrf_token %}
+                                    {{ form.rep7 }}
+                                </div>  
+                                <div class= "ruller3">
+                                    {% csrf_token %}
+                                    {{ form.weight7 }}
+                                </div>    
+                                <div class= "ruller4">
+                                    {% csrf_token %}
+                                    {{ form.dist7 }}
+                                </div>  
+                                <div class= "ruller5">
+                                    {% csrf_token %}
+                                    {{ form.note7 }}
+                                </div>  
+                            </div>   
+                        {% endif %}                 
+                    </div>     
+                    <div class= "{{ session.slug8 }}">                     
+                        <h2>{{ session.exercise8 }}</h2>
+                        {% if session.slug8 == "ex8" %}
+                        <hr></hr>                            
+                            <div class= "label">                    
+                                <h3 class= "label1">Hold</h3>                    
+                                <h3 class= "label2">Rep/Time</h3>
+                                <h3 class= "label3">Weight</h3>                            
+                                <h3 class= "label4">Distance</h3>
+                                <h3 class= "label5">Notes</h3>                            
+                            </div>                              
+                            <div class= "rullers">
+                                <div class= "ruller1">
+                                    {% csrf_token %}
+                                    {{ form.hold8 }}
+                                </div>    
+                                <div class= "ruller2">
+                                    {% csrf_token %}
+                                    {{ form.rep8 }}
+                                </div>  
+                                <div class= "ruller3">
+                                    {% csrf_token %}
+                                    {{ form.weight8 }}
+                                </div>    
+                                <div class= "ruller4">
+                                    {% csrf_token %}
+                                    {{ form.dist8 }}
+                                </div>  
+                                <div class= "ruller5">
+                                    {% csrf_token %}
+                                    {{ form.note8 }}
+                                </div>  
+                            </div>   
+                        {% endif %}                
+                    </div>    
+                    <div class= "{{ session.slug9 }}">                     
+                        <h2>{{ session.exercise9 }}</h2>
+                        {% if session.slug9 == "ex9" %}
+                        <hr></hr>                            
+                            <div class= "label">                    
+                                <h3 class= "label1">Hold</h3>                    
+                                <h3 class= "label2">Rep/Time</h3>
+                                <h3 class= "label3">Weight</h3>                            
+                                <h3 class= "label4">Distance</h3>
+                                <h3 class= "label5">Notes</h3>                            
+                            </div>                             
+                            <div class= "rullers">
+                                <div class= "ruller1">
+                                    {% csrf_token %}
+                                    {{ form.hold9 }}
+                                </div>    
+                                <div class= "ruller2">
+                                    {% csrf_token %}
+                                    {{ form.rep9 }}
+                                </div>  
+                                <div class= "ruller3">
+                                    {% csrf_token %}
+                                    {{ form.weight9 }}
+                                </div>    
+                                <div class= "ruller4">
+                                    {% csrf_token %}
+                                    {{ form.dist9 }}
+                                </div>  
+                                <div class= "ruller5">
+                                    {% csrf_token %}
+                                    {{ form.note9 }}
+                                </div>  
+                            </div>   
+                        {% endif %}              
+                    </div>     
+                    <div class= "{{ session.slug10 }}">                     
+                        <h2>{{ session.exercise10 }}</h2>
+                        {% if session.slug10 == "ex10" %}
+                        <hr></hr>                            
+                            <div class= "label">                    
+                                <h3 class= "label1">Hold</h3>                    
+                                <h3 class= "label2">Rep/Time</h3>
+                                <h3 class= "label3">Weight</h3>                            
+                                <h3 class= "label4">Distance</h3>
+                                <h3 class= "label5">Notes</h3>                            
+                            </div>                             
+                            <div class= "rullers">
+                                <div class= "ruller1">
+                                    {% csrf_token %}
+                                    {{ form.hold10 }}
+                                </div>    
+                                <div class= "ruller2">
+                                    {% csrf_token %}
+                                    {{ form.rep10 }}
+                                </div>  
+                                <div class= "ruller3">
+                                    {% csrf_token %}
+                                    {{ form.weight10 }}
+                                </div>    
+                                <div class= "ruller4">
+                                    {% csrf_token %}
+                                    {{ form.dist10 }}
+                                </div>  
+                                <div class= "ruller5">
+                                    {% csrf_token %}
+                                    {{ form.note10 }}
+                                </div>  
+                            </div>    
+                        {% endif %}                 
+                    </div>     
+                    <div class= "{{ session.slug11 }}">                     
+                        <h2>{{ session.exercise11 }}</h2>
+                        {% if session.slug11 == "ex11" %}
+                        <hr></hr>                            
+                            <div class= "label">                    
+                                <h3 class= "label1">Hold</h3>                    
+                                <h3 class= "label2">Rep/Time</h3>
+                                <h3 class= "label3">Weight</h3>                            
+                                <h3 class= "label4">Distance</h3>
+                                <h3 class= "label5">Notes</h3>                            
+                            </div>
+                      
+                            <div class= "rullers">
+                                <div class= "ruller1">
+                                    {% csrf_token %}
+                                    {{ form.hold11 }}
+                                </div>    
+                                <div class= "ruller2">
+                                    {% csrf_token %}
+                                    {{ form.rep11 }}
+                                </div>  
+                                <div class= "ruller3">
+                                    {% csrf_token %}
+                                    {{ form.weight11 }}
+                                </div>    
+                                <div class= "ruller4">
+                                    {% csrf_token %}
+                                    {{ form.dist11 }}
+                                </div>  
+                                <div class= "ruller5">
+                                    {% csrf_token %}
+                                    {{ form.note11 }}
+                                </div>  
+                            </div>   
+                        {% endif %}                 
+                    </div>     
+                    <div class= "{{ session.slug12 }}">                     
+                        <h2>{{ session.exercise12 }}</h2>
+                        {% if session.slug12 == "ex12" %}
+                        <hr></hr>                            
+                            <div class= "label">                    
+                                <h3 class= "label1">Hold</h3>                    
+                                <h3 class= "label2">Rep/Time</h3>
+                                <h3 class= "label3">Weight</h3>                            
+                                <h3 class= "label4">Distance</h3>
+                                <h3 class= "label5">Notes</h3>                            
+                            </div>                          
+                            <div class= "rullers">
+                                <div class= "ruller1">
+                                    {% csrf_token %}
+                                    {{ form.hold12 }}
+                                </div>    
+                                <div class= "ruller2">
+                                    {% csrf_token %}
+                                    {{ form.rep12 }}
+                                </div>  
+                                <div class= "ruller3">
+                                    {% csrf_token %}
+                                    {{ form.weight12 }}
+                                </div>    
+                                <div class= "ruller4">
+                                    {% csrf_token %}
+                                    {{ form.dist12 }}
+                                </div>  
+                                <div class= "ruller5">
+                                    {% csrf_token %}
+                                    {{ form.note12 }}
+                                </div>  
+                            </div>    
+                        {% endif %}                 
+                    </div>
+                    <div  class= "buttonplace">
+                        <input class= "backtosession1" type="submit" value="Save data">                        
+                    </div>
+
+                </form>       
+            {% endfor %}
+  
+        </div>
+    </div>
+    <div class="legend2">
+        <div class="leglabel">Color legend :</div>        
+        <div class="styleleg">
+            
+            <div class="strenleg">Strength</div>        
+            <div class="enduleg">Endurance</div>         
+            <div class="stableg">Stabilisation</div>         
+            <div class="restleg">Rest</div>
+
+            
+        </div>    
+    </div>    
+      
+    <div class="legend">
+        {% for session in sessions %}        
+            <div class= "user" >
+                <h1>{{ first }}</h1>
+                <h1>{{ last }}</h1>                
+            </div>
+        {% endfor %}                
+          
+        <div class= "backtosession2">                     
+            <h2><a href="{% url 'Calendar:connect' slug=varislug2 %}">Session</a></h2>                
+        </div> 
+
+
+        <div class= "logo">  
+            <a  href="{% url 'Calendar:home' %}">
+                <img src="/static/images/logoplanapp3.png" height="90px" />
+            </a>    
+        </div>        
+    </div>       
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}   
+    
+</body>
+</html>

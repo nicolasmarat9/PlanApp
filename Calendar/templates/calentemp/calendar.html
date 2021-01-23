@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="/static/calendardet.css"/>
+    <link rel="icon" sizes="160x160" href="/static/images/logoplanapp2.png">
+
+    </style>
+</head>
+<body>
+
+    <div class= "container" >
+        <div class= "calendar" >
+        
+            {% for calendar in calendars %}
+                <div class= "month">
+                    <div class="prev">
+                        <a href="{% url 'Calendar:calendprev' %}"{{Calendar.click1}}>&#10094</a>
+                        
+                    </div>
+                    <div class= "title" >
+                        <h1>{{ calendar.title }}</h1>                
+                    </div>
+                    <div class="next">
+                        <a href="{% url 'Calendar:calendnext' %}" >&#10095</a>
+                    </div>  
+                </div>
+                <div class= "weekdays">            
+                    <div class="mon">Mon</div>
+                    <div class="tue">Tue</div>
+                    <div class="wed">Wed</div>            
+                    <div class="thu">Thu</div>
+                    <div class="fri">Fri</div>
+                    <div class="sat">Sat</div>
+                    <div class="sun">Sun</div>
+                </div>    
+                <div class= "day">
+                    {% csrf_token %} 
+                    {% if click == 0 %}
+                        {% if calendar.color1 == "off" or calendar.color1 == "rest" %}
+                            {% if calendar.day_1 == today3 and calendar.color1 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color1 }}">{{ calendar.day_1 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color1 }}">{{ calendar.day_1 }}</a></div>
+                            {% endif %}
+                        {% else %}                             
+                            {% if calendar.day_1 == today3 and calendar.color1 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color1 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_1 %}">{{ calendar.day_1 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color1 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_1 %}">{{ calendar.day_1 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color2 == "off" or calendar.color2 == "rest" %}
+                            {% if calendar.day_2 == today3 and calendar.color2 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color2 }}">{{ calendar.day_2 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color2 }}">{{ calendar.day_2 }}</a></div>
+                            {% endif %}
+                        {% else %}                        
+                            {% if calendar.day_2 == today3 and calendar.color2 != "off" %}                      
+                                <div><a class= "Today_{{ calendar.color2 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_2 %}">{{ calendar.day_2 }}</a></div>
+                            {% else %}
+                                <div><a class= "{{ calendar.color2 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_2 %}">{{ calendar.day_2 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color3 == "off" or calendar.color3 == "rest" %}
+                            {% if calendar.day_3 == today3 and calendar.color3 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color3 }}">{{ calendar.day_3 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color3 }}">{{ calendar.day_3 }}</a></div>
+                            {% endif %}
+                        {% else %}                         
+                            {% if calendar.day_3 == today3 and calendar.color3 != "off" %}               
+                                <div><a class= "Today_{{ calendar.color3 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_3 %}">{{ calendar.day_3 }}</a></div>
+                            {% else %}
+                                <div><a class= "{{ calendar.color3 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_3 %}">{{ calendar.day_3 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color4 == "off" or calendar.color4 == "rest" %}
+                            {% if calendar.day_4 == today3 and calendar.color4 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color4 }}">{{ calendar.day_4 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color4 }}">{{ calendar.day_4 }}</a></div>
+                            {% endif %}
+                        {% else %}  
+                            {% if calendar.day_4 == today3 and calendar.color4 != "off" %}                     
+                                <div><a class= "Today_{{ calendar.color4 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_4 %}">{{ calendar.day_4 }}</a></div>
+                            {% else %}                    
+                                <div><a class= "{{ calendar.color4 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_4 %}">{{ calendar.day_4 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color5 == "off" or calendar.color5 == "rest" %}
+                            {% if calendar.day_5 == today3 and calendar.color5 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color5 }}">{{ calendar.day_5 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color5 }}">{{ calendar.day_5 }}</a></div>
+                            {% endif %}
+                        {% else %}                              
+                            {% if calendar.day_5 == today3 and calendar.color5 != "off" %}                      
+                                <div><a class= "Today_{{ calendar.color5 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_5 %}">{{ calendar.day_5 }}</a></div>
+                            {% else %}                       
+                                <div><a class= "{{ calendar.color5 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_5 %}">{{ calendar.day_5 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color6 == "off" or calendar.color6 == "rest" %}
+                            {% if calendar.day_6 == today3 and calendar.color6 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color6 }}">{{ calendar.day_6 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color6 }}">{{ calendar.day_6 }}</a></div>
+                            {% endif %}
+                        {% else %}                              
+                            {% if calendar.day_6 == today3 and calendar.color6 != "off" %}                      
+                                <div><a class= "Today_{{ calendar.color6 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_6 %}">{{ calendar.day_6 }}</a></div>
+                            {% else %}                           
+                                <div><a class= "{{ calendar.color6 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_6 %}">{{ calendar.day_6 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color7 == "off" or calendar.color7 == "rest" %}
+                            {% if calendar.day_7 == today3 and calendar.color7 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color7 }}">{{ calendar.day_7 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color7 }}">{{ calendar.day_7 }}</a></div>
+                            {% endif %}
+                        {% else %}                              
+                            {% if calendar.day_7 == today3 and calendar.color7 != "off" %}                              
+                                <div><a class= "Today_{{ calendar.color7 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_7 %}">{{ calendar.day_7 }}</a></div>
+                            {% else %}                           
+                                <div><a class= "{{ calendar.color7 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_7 %}">{{ calendar.day_7 }}</a></div>                        
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color8 == "off" or calendar.color8 == "rest" %}
+                            {% if calendar.day_8 == today3 and calendar.color8 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color8 }}">{{ calendar.day_8 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color8 }}">{{ calendar.day_8 }}</a></div>
+                            {% endif %}
+                        {% else %}                              
+                            {% if calendar.day_8 == today3 and calendar.color8 != "off" %}                           
+                                <div><a class= "Today_{{ calendar.color8 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_8 %}">{{ calendar.day_8 }}</a></div>
+                            {% else %}  
+                                <div><a class= "{{ calendar.color8 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_8 %}">{{ calendar.day_8 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color9 == "off" or calendar.color9 == "rest" %}
+                            {% if calendar.day_9 == today3 and calendar.color9 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color9 }}">{{ calendar.day_9 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color9 }}">{{ calendar.day_9 }}</a></div>
+                            {% endif %}
+                        {% else %}                              
+                            {% if calendar.day_9 == today3 and calendar.color9 != "off" %}                          
+                                <div><a class= "Today_{{ calendar.color9 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_9 %}">{{ calendar.day_9 }}</a></div>
+                            {% else %}                         
+                                <div><a class= "{{ calendar.color9 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_9 %}">{{ calendar.day_9 }}</a></div>                        
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color10 == "off" or calendar.color10 == "rest" %}
+                            {% if calendar.day_10 == today3 and calendar.color10 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color10 }}">{{ calendar.day_10 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color10 }}">{{ calendar.day_10 }}</a></div>
+                            {% endif %}
+                        {% else %}                          
+                            {% if calendar.day_10 == today3 and calendar.color10 != "off" %}                          
+                                <div><a class= "Today_{{ calendar.color10 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_10 %}">{{ calendar.day_10 }}</a></div>
+                            {% else %}                         
+                                <div><a class= "{{ calendar.color10 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_10 %}">{{ calendar.day_10 }}</a></div>                        
+                            {% endif %}
+                        {% endif %}                            
+                        {% if calendar.color11 == "off" or calendar.color11 == "rest" %}
+                            {% if calendar.day_11 == today3 and calendar.color11 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color11 }}">{{ calendar.day_11 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color11 }}">{{ calendar.day_11 }}</a></div>
+                            {% endif %}
+                        {% else %}                              
+                            {% if calendar.day_11 == today3 and calendar.color11 != "off" %}                           
+                                <div><a class= "Today_{{ calendar.color11 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_11 %}">{{ calendar.day_11 }}</a></div>
+                            {% else %}                          
+                                <div><a class= "{{ calendar.color11 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_11 %}">{{ calendar.day_11 }}</a></div>                        
+                            {% endif %}
+                        {% endif %}                            
+                        {% if calendar.color12 == "off" or calendar.color12 == "rest" %}
+                            {% if calendar.day_12 == today3 and calendar.color12 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color12 }}">{{ calendar.day_12 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color12 }}">{{ calendar.day_12 }}</a></div>
+                            {% endif %}
+                        {% else %}                              
+                            {% if calendar.day_12 == today3 and calendar.color12 != "off" %}                           
+                                <div><a class= "Today_{{ calendar.color12 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_12 %}">{{ calendar.day_12 }}</a></div>
+                            {% else %}                         
+                                <div><a class= "{{ calendar.color12 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_12 %}">{{ calendar.day_12 }}</a></div>                        
+                            {% endif %}
+                        {% endif %}                            
+                        {% if calendar.color13 == "off" or calendar.color13 == "rest" %}
+                            {% if calendar.day_13 == today3 and calendar.color13 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color13 }}">{{ calendar.day_13 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color13 }}">{{ calendar.day_13 }}</a></div>
+                            {% endif %}
+                        {% else %}                              
+                            {% if calendar.day_13 == today3 and calendar.color13 != "off" %}                                   
+                                <div><a class= "Today_{{ calendar.color13 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_13 %}">{{ calendar.day_13 }}</a></div>
+                            {% else %}                         
+                                <div><a class= "{{ calendar.color13 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_13 %}">{{ calendar.day_13 }}</a></div>
+                            {% endif %}
+                        {% endif %}                            
+                        {% if calendar.color14 == "off" or calendar.color14 == "rest" %}
+                            {% if calendar.day_14 == today3 and calendar.color14 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color14 }}">{{ calendar.day_14 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color14 }}">{{ calendar.day_14 }}</a></div>
+                            {% endif %}
+                        {% else %}                              
+                            {% if calendar.day_14 == today3 and calendar.color14 != "off" %}                         
+                                <div><a class= "Today_{{ calendar.color14 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_14 %}">{{ calendar.day_14 }}</a></div>
+                            {% else %}                          
+                                <div><a class= "{{ calendar.color14 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_14 %}">{{ calendar.day_14 }}</a></div>
+                            {% endif %}
+                        {% endif %}                            
+                        {% if calendar.color15 == "off" or calendar.color15 == "rest" %}
+                            {% if calendar.day_15 == today3 and calendar.color15 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color15 }}">{{ calendar.day_15 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color15 }}">{{ calendar.day_15 }}</a></div>
+                            {% endif %}
+                        {% else %}                            
+                            {% if calendar.day_15 == today3 and calendar.color15 != "off" %}                               
+                                <div><a class= "Today_{{ calendar.color15 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_15 %}">{{ calendar.day_15 }}</a></div>
+                            {% else %}                          
+                                <div><a class= "{{ calendar.color15 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_15 %}">{{ calendar.day_15 }}</a></div>
+                            {% endif %}
+                        {% endif %}                            
+                        {% if calendar.color16 == "off" or calendar.color16 == "rest" %}
+                            {% if calendar.day_16 == today3 and calendar.color16 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color16 }}">{{ calendar.day_16 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color16 }}">{{ calendar.day_16 }}</a></div>
+                            {% endif %}
+                        {% else %}                               
+                            {% if calendar.day_16 == today3 and calendar.color16 != "off" %}                            
+                                <div><a class= "Today_{{ calendar.color16 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_16 %}">{{ calendar.day_16 }}</a></div>
+                            {% else %}                        
+                                <div><a class= "{{ calendar.color16 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_16 %}">{{ calendar.day_16 }}</a></div>
+                            {% endif %}
+                        {% endif %}                            
+                        {% if calendar.color17 == "off" or calendar.color17 == "rest" %}
+                            {% if calendar.day_17 == today3 and calendar.color17 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color17 }}">{{ calendar.day_17 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color17 }}">{{ calendar.day_17 }}</a></div>
+                            {% endif %}
+                        {% else %}                               
+                            {% if calendar.day_17 == today3 and calendar.color17 != "off" %}                       
+                                <div><a class= "Today_{{ calendar.color17 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_17 %}">{{ calendar.day_17 }}</a></div>
+                            {% else %}                          
+                                <div><a class= "{{ calendar.color17 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_17 %}">{{ calendar.day_17 }}</a></div>
+                            {% endif %}
+                        {% endif %}                            
+                        {% if calendar.color18 == "off" or calendar.color18 == "rest" %}
+                            {% if calendar.day_18 == today3 and calendar.color18 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color18 }}">{{ calendar.day_18 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color18 }}">{{ calendar.day_18 }}</a></div>
+                            {% endif %}
+                        {% else %}                               
+                            {% if calendar.day_18 == today3 and calendar.color18 != "off" %}                           
+                                <div><a class= "Today_{{ calendar.color18 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_18 %}">{{ calendar.day_18 }}</a></div>
+                            {% else %}                           
+                                <div><a class= "{{ calendar.color18 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_18 %}">{{ calendar.day_18 }}</a></div>
+                            {% endif %}
+                        {% endif %}                            
+                        {% if calendar.color19 == "off" or calendar.color19 == "rest" %}
+                            {% if calendar.day_19 == today3 and calendar.color19 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color19 }}">{{ calendar.day_19 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color19 }}">{{ calendar.day_19 }}</a></div>
+                            {% endif %}
+                        {% else %}                               
+                            {% if calendar.day_19 == today3 and calendar.color19 != "off" %}                              
+                                <div><a class= "Today_{{ calendar.color19 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_19 %}">{{ calendar.day_19 }}</a></div>
+                            {% else %}                          
+                                <div><a class= "{{ calendar.color19 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_19 %}">{{ calendar.day_19 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color20 == "off" or calendar.color20 == "rest" %}
+                            {% if calendar.day_20 == today3 and calendar.color20 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color20 }}">{{ calendar.day_20 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color20 }}">{{ calendar.day_20 }}</a></div>
+                            {% endif %}
+                        {% else %}                            
+                            {% if calendar.day_20 == today3 and calendar.color20 != "off" %}                                  
+                                <div><a class= "Today_{{ calendar.color20 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_20 %}">{{ calendar.day_20 }}</a></div>
+                            {% else %}                           
+                                <div><a class= "{{ calendar.color20 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_20 %}">{{ calendar.day_20 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color21 == "off" or calendar.color21 == "rest" %}
+                            {% if calendar.day_21 == today3 and calendar.color21 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color21 }}">{{ calendar.day_21 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color21 }}">{{ calendar.day_21 }}</a></div>
+                            {% endif %}
+                        {% else %}  
+                            {% if calendar.day_21 == today3 and calendar.color21 != "off" %}                          
+                                <div><a class= "Today_{{ calendar.color21 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_21 %}">{{ calendar.day_21 }}</a></div>
+                            {% else %}                           
+                                <div><a class= "{{ calendar.color21 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_21 %}">{{ calendar.day_21 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color22 == "off" or calendar.color22 == "rest" %}
+                            {% if calendar.day_22 == today3 and calendar.color22 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color22 }}">{{ calendar.day_22 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color22 }}">{{ calendar.day_22 }}</a></div>
+                            {% endif %}
+                        {% else %}                            
+                            {% if calendar.day_22 == today3 and calendar.color22 != "off" %}                          
+                                <div><a class= "Today_{{ calendar.color22 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_22 %}">{{ calendar.day_22 }}</a></div>
+                            {% else %}                          
+                                <div><a class= "{{ calendar.color22 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_22 %}">{{ calendar.day_22 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color23 == "off" or calendar.color23 == "rest" %}
+                            {% if calendar.day_23 == today3 and calendar.color23 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color23 }}">{{ calendar.day_23 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color23 }}">{{ calendar.day_23 }}</a></div>
+                            {% endif %}
+                        {% else %}                            
+                            {% if calendar.day_23 == today3 and calendar.color23 != "off" %}                        
+                                <div><a class= "Today_{{ calendar.color23 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_23 %}">{{ calendar.day_23 }}</a></div>
+                            {% else %}                         
+                                <div><a class= "{{ calendar.color23 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_23 %}">{{ calendar.day_23 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color24 == "off" or calendar.color24 == "rest" %}
+                            {% if calendar.day_24 == today3 and calendar.color24 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color24 }}">{{ calendar.day_24 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color24 }}">{{ calendar.day_24 }}</a></div>
+                            {% endif %}
+                        {% else %}                            
+                            {% if calendar.day_24 == today3 and calendar.color24 != "off" %}                                  
+                                <div><a class= "Today_{{ calendar.color24 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_24 %}">{{ calendar.day_24 }}</a></div>
+                            {% else %}                          
+                                <div><a class= "{{ calendar.color24 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_24 %}">{{ calendar.day_24 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color25 == "off" or calendar.color25 == "rest" %}
+                            {% if calendar.day_25 == today3 and calendar.color25 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color25 }}">{{ calendar.day_25 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color25 }}">{{ calendar.day_25 }}</a></div>
+                            {% endif %}
+                        {% else %}                            
+                            {% if calendar.day_25 == today3 and calendar.color25 != "off" %}                              
+                                <div><a class= "Today_{{ calendar.color25 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_25 %}">{{ calendar.day_25 }}</a></div>
+                            {% else %}                          
+                                <div><a class= "{{ calendar.color25 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_25 %}">{{ calendar.day_25 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color26 == "off" or calendar.color26 == "rest" %}
+                            {% if calendar.day_26 == today3 and calendar.color26 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color26 }}">{{ calendar.day_26 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color26 }}">{{ calendar.day_26 }}</a></div>
+                            {% endif %}
+                        {% else %}                            
+                            {% if calendar.day_26 == today3 and calendar.color26 != "off" %}                            
+                                <div><a class= "Today_{{ calendar.color26 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_26 %}">{{ calendar.day_26 }}</a></div>
+                            {% else %}                          
+                                <div><a class= "{{ calendar.color26 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_26 %}">{{ calendar.day_26 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color27 == "off" or calendar.color27 == "rest" %}
+                            {% if calendar.day_27 == today3 and calendar.color27 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color27 }}">{{ calendar.day_27 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color27 }}">{{ calendar.day_27 }}</a></div>
+                            {% endif %}
+                        {% else %}                            
+                            {% if calendar.day_27 == today3 and calendar.color27 != "off" %}                               
+                                <div><a class= "Today_{{ calendar.color27 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_27 %}">{{ calendar.day_27 }}</a></div>
+                            {% else %}                         
+                                <div><a class= "{{ calendar.color27 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_27 %}">{{ calendar.day_27 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color28 == "off" or calendar.color28 == "rest" %}
+                            {% if calendar.day_28 == today3 and calendar.color28 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color28 }}">{{ calendar.day_28 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color28 }}">{{ calendar.day_28 }}</a></div>
+                            {% endif %}
+                        {% else %}                            
+                            {% if calendar.day_28 == today3 and calendar.color28 != "off" %}                          
+                                <div><a class= "Today_{{ calendar.color28 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_28 %}">{{ calendar.day_28 }}</a></div>
+                            {% else %}                         
+                                <div><a class= "{{ calendar.color28 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_28 %}">{{ calendar.day_28 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color29 == "off" or calendar.color29 == "rest" %}
+                            {% if calendar.day_29 == today3 and calendar.color29 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color29 }}">{{ calendar.day_29 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color29 }}">{{ calendar.day_29 }}</a></div>
+                            {% endif %}
+                        {% else %}                            
+                            {% if calendar.day_29 == today3 and calendar.color29 != "off" %}                           
+                                <div><a class= "Today_{{ calendar.color29 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_29 %}">{{ calendar.day_29 }}</a></div>
+                            {% else %}                         
+                                <div><a class= "{{ calendar.color29 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_29 %}">{{ calendar.day_29 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color30 == "off" or calendar.color30 == "rest" %}
+                            {% if calendar.day_30 == today3 and calendar.color30 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color30 }}">{{ calendar.day_30 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color30 }}">{{ calendar.day_30 }}</a></div>
+                            {% endif %}
+                        {% else %}                             
+                            {% if calendar.day_30 == today3 and calendar.color30 != "off" %}   
+                                <div><a class= "Today_{{ calendar.color30 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_30 %}">{{ calendar.day_30 }}</a></div>
+                            {% else %}                         
+                                <div><a class= "{{ calendar.color30 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_30 %}">{{ calendar.day_30 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color31 == "off" or calendar.color31 == "rest" %}
+                            {% if calendar.day_31 == today31 and calendar.color31 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color31 }}">{{ calendar.day_31 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color31 }}">{{ calendar.day_31 }}</a></div>
+                            {% endif %}
+                        {% else %}                             
+                            {% if calendar.day_31 == today3 and calendar.color31 != "off" %}                           
+                                <div><a class= "Today_{{ calendar.color31 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_31 %}">{{ calendar.day_31 }}</a></div>
+                            {% else %}                        
+                                <div><a class= "{{ calendar.color31 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_31 %}">{{ calendar.day_31 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color32 == "off" or calendar.color32 == "rest" %}
+                            {% if calendar.day_32 == today3 and calendar.color32 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color32 }}">{{ calendar.day_32 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color32 }}">{{ calendar.day_32 }}</a></div>
+                            {% endif %}
+                        {% else %}                             
+                            {% if calendar.day_32 == today3 and calendar.color32 != "off" %}                       
+                                <div><a class= "Today_{{ calendar.color32 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_32 %}">{{ calendar.day_32 }}</a></div>
+                            {% else %}                         
+                                <div><a class= "{{ calendar.color32 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_32 %}">{{ calendar.day_32 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color33 == "off" or calendar.color33 == "rest" %}
+                            {% if calendar.day_33 == today3 and calendar.color33 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color33 }}">{{ calendar.day_33 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color33 }}">{{ calendar.day_33 }}</a></div>
+                            {% endif %}
+                        {% else %}                             
+                            {% if calendar.day_33 == today3 and calendar.color33 != "off" %}                             
+                                <div><a class= "Today_{{ calendar.color33 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_33 %}">{{ calendar.day_33 }}</a></div>
+                            {% else %}                          
+                                <div><a class= "{{ calendar.color33 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_33 %}">{{ calendar.day_33 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color34 == "off" or calendar.color34 == "rest" %}
+                            {% if calendar.day_34 == today3 and calendar.color34 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color34 }}">{{ calendar.day_34 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color34 }}">{{ calendar.day_34 }}</a></div>
+                            {% endif %}
+                        {% else %}                             
+                            {% if calendar.day_34 == today3 and calendar.color34 != "off" %}                           
+                                <div><a class= "Today_{{ calendar.color34 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_34 %}">{{ calendar.day_34 }}</a></div>
+                            {% else %}                            
+                                <div><a class= "{{ calendar.color34 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_34 %}">{{ calendar.day_34 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color35 == "off" or calendar.color35 == "rest" %}
+                            {% if calendar.day_35 == today3 and calendar.color35 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color35 }}">{{ calendar.day_35 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color35 }}">{{ calendar.day_35 }}</a></div>
+                            {% endif %}
+                        {% else %}                             
+                            {% if calendar.day_35 == today3 and calendar.color35 != "off" %}                           
+                                <div><a class= "Today_{{ calendar.color35 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_35 %}">{{ calendar.day_35 }}</a></div>
+                            {% else %}                          
+                                <div><a class= "{{ calendar.color35 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_35 %}">{{ calendar.day_35 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color36 == "off" or calendar.color36 == "rest" %}
+                            {% if calendar.day_36 == today3 and calendar.color36 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color36 }}">{{ calendar.day_36 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color36 }}">{{ calendar.day_36 }}</a></div>
+                            {% endif %}
+                        {% else %}                             
+                            {% if calendar.day_36 == today3 and calendar.color36 != "off" %}                             
+                                <div><a class= "Today_{{ calendar.color36 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_36 %}">{{ calendar.day_36 }}</a></div>
+                            {% else %}                             
+                                <div><a class= "{{ calendar.color36 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_36 %}">{{ calendar.day_36 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color37 == "off" or calendar.color37 == "rest" %}
+                            {% if calendar.day_37 == today3 and calendar.color37 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color37 }}">{{ calendar.day_37 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color37 }}">{{ calendar.day_37 }}</a></div>
+                            {% endif %}
+                        {% else %}                             
+                            {% if calendar.day_37 == today3 and calendar.color37 != "off" %}                            
+                                <div><a class= "Today_{{ calendar.color37 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_37 %}">{{ calendar.day_37 }}</a></div>
+                            {% else %}                        
+                                <div><a class= "{{ calendar.color37 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_37 %}">{{ calendar.day_37 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color38 == "off" or calendar.color38 == "rest" %}
+                            {% if calendar.day_38 == today3 and calendar.color38 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color38 }}">{{ calendar.day_38 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color38 }}">{{ calendar.day_38 }}</a></div>
+                            {% endif %}
+                        {% else %}                             
+                            {% if calendar.day_38 == today3 and calendar.color38 != "off" %}                                   
+                                <div><a class= "Today_{{ calendar.color38 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_38 %}">{{ calendar.day_38 }}</a></div>
+                            {% else %}                            
+                                <div><a class= "{{ calendar.color38 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_38 %}">{{ calendar.day_38 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color39 == "off" or calendar.color39 == "rest" %}
+                            {% if calendar.day_39 == today3 and calendar.color39 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color39 }}">{{ calendar.day_39 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color39 }}">{{ calendar.day_39 }}</a></div>
+                            {% endif %}
+                        {% else %}                             
+                            {% if calendar.day_39 == today3 and calendar.color39 != "off" %}                                 
+                                <div><a class= "Today_{{ calendar.color39 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_39 %}">{{ calendar.day_39 }}</a></div>
+                            {% else %}                     
+                                <div><a class= "{{ calendar.color39 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_39 %}">{{ calendar.day_39 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color40 == "off" or calendar.color40 == "rest" %}
+                            {% if calendar.day_40 == today3 and calendar.color40 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color40 }}">{{ calendar.day_40 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color40 }}">{{ calendar.day_40 }}</a></div>
+                            {% endif %}
+                        {% else %}                             
+                            {% if calendar.day_40 == today3 and calendar.color40 != "off" %}                  
+                                <div><a class= "Today_{{ calendar.color40 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_40 %}">{{ calendar.day_40 }}</a></div>
+                            {% else %}                         
+                                <div><a class= "{{ calendar.color40 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_40 %}">{{ calendar.day_40 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color41 == "off" or calendar.color41 == "rest" %}
+                            {% if calendar.day_41 == today3 and calendar.color41 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color41 }}">{{ calendar.day_41 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color41 }}">{{ calendar.day_41 }}</a></div>
+                            {% endif %}
+                        {% else %}                             
+                            {% if calendar.day_41 == today3 and calendar.color41 != "off" %}                        
+                                <div><a class= "Today_{{ calendar.color41 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_41 %}">{{ calendar.day_41 }}</a></div>
+                            {% else %}                           
+                                <div><a class= "{{ calendar.color41 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_41 %}">{{ calendar.day_41 }}</a></div>
+                            {% endif %}
+                        {% endif %}
+                        {% if calendar.color42 == "off" or calendar.color42 == "rest" %}
+                            {% if calendar.day_42 == today3 and calendar.color42 != "off" %}                    
+                                <div><a class= "Today_{{ calendar.color42 }}">{{ calendar.day_42 }}</a></div>
+                            {% else %}   
+                                <div><a class= "{{ calendar.color42 }}">{{ calendar.day_42 }}</a></div>
+                            {% endif %}
+                        {% else %}                             
+                            {% if calendar.day_42 == today3 and calendar.color42 != "off" %}                          
+                                <div><a class= "Today_{{ calendar.color42 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_42 %}">{{ calendar.day_42 }}</a></div>
+                            {% else %}                          
+                                <div><a class= "{{ calendar.color42 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_42 %}">{{ calendar.day_42 }}</a></div>
+                            {% endif %}
+                        {% endif %}                        
+                    {% else %}
+                        {% if calendar.color1 == "off" or calendar.color1 == "rest" %}
+                            <div><a class= "{{ calendar.color1 }}">{{ calendar.day_1 }}</a></div>                        
+                        {% else %}                          
+                            <div><a class= "{{ calendar.color1 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_1 %}">{{ calendar.day_1 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color2 == "off" or calendar.color2 == "rest" %}
+                            <div><a class= "{{ calendar.color2 }}">{{ calendar.day_2 }}</a></div>                        
+                        {% else %}                          
+                            <div><a class= "{{ calendar.color2 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_2 %}">{{ calendar.day_2 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color3 == "off" or calendar.color3 == "rest" %}
+                            <div><a class= "{{ calendar.color3 }}">{{ calendar.day_3 }}</a></div>                        
+                        {% else %}                             
+                            <div><a class= "{{ calendar.color3 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_3 %}">{{ calendar.day_3 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color4 == "off" or calendar.color4 == "rest" %}
+                            <div><a class= "{{ calendar.color4 }}">{{ calendar.day_4 }}</a></div>                        
+                        {% else %}                             
+                            <div><a class= "{{ calendar.color4 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_4 %}">{{ calendar.day_4 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color5 == "off" or calendar.color5 == "rest" %}
+                            <div><a class= "{{ calendar.color5 }}">{{ calendar.day_5 }}</a></div>                        
+                        {% else %}                         
+                            <div><a class= "{{ calendar.color5 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_5 %}">{{ calendar.day_5 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color6 == "off" or calendar.color6 == "rest" %}
+                            <div><a class= "{{ calendar.color6 }}">{{ calendar.day_6 }}</a></div>                        
+                        {% else %}              
+                            <div><a class= "{{ calendar.color6 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_6 %}">{{ calendar.day_6 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color7 == "off" or calendar.color7 == "rest" %}
+                            <div><a class= "{{ calendar.color7 }}">{{ calendar.day_7 }}</a></div>                        
+                        {% else %}                         
+                            <div><a class= "{{ calendar.color7 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_7 %}">{{ calendar.day_7 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color8 == "off" or calendar.color8 == "rest" %}
+                            <div><a class= "{{ calendar.color8 }}">{{ calendar.day_8 }}</a></div>                        
+                        {% else %}                         
+                            <div><a class= "{{ calendar.color8 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_8 %}">{{ calendar.day_8 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color9 == "off" or calendar.color9 == "rest" %}
+                            <div><a class= "{{ calendar.color9 }}">{{ calendar.day_9 }}</a></div>                        
+                        {% else %}                         
+                            <div><a class= "{{ calendar.color9 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_9 %}">{{ calendar.day_9 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color10 == "off" or calendar.color10 == "rest" %}
+                            <div><a class= "{{ calendar.color10 }}">{{ calendar.day_10 }}</a></div>                        
+                        {% else %}                           
+                            <div><a class= "{{ calendar.color10 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_10 %}">{{ calendar.day_10 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color11 == "off" or calendar.color11 == "rest" %}
+                            <div><a class= "{{ calendar.color11 }}">{{ calendar.day_11 }}</a></div>                        
+                        {% else %}                         
+                            <div><a class= "{{ calendar.color11 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_11 %}">{{ calendar.day_11 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color12 == "off" or calendar.color12 == "rest" %}
+                            <div><a class= "{{ calendar.color12 }}">{{ calendar.day_12 }}</a></div>                        
+                        {% else %}                          
+                            <div><a class= "{{ calendar.color12 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_12 %}">{{ calendar.day_12 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color13 == "off" or calendar.color13 == "rest" %}
+                            <div><a class= "{{ calendar.color13 }}">{{ calendar.day_13 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color13 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_13 %}">{{ calendar.day_13 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color14 == "off" or calendar.color14 == "rest" %}
+                            <div><a class= "{{ calendar.color14 }}">{{ calendar.day_14 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color14 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_14 %}">{{ calendar.day_14 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color15 == "off" or calendar.color15 == "rest" %}
+                            <div><a class= "{{ calendar.color15 }}">{{ calendar.day_15 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color15 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_15 %}">{{ calendar.day_15 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color16 == "off" or calendar.color16 == "rest" %}
+                            <div><a class= "{{ calendar.color16 }}">{{ calendar.day_16 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color16 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_16 %}">{{ calendar.day_16 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color17 == "off" or calendar.color17 == "rest" %}
+                            <div><a class= "{{ calendar.color17 }}">{{ calendar.day_17 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color17 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_17 %}">{{ calendar.day_17 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color18 == "off" or calendar.color18 == "rest" %}
+                            <div><a class= "{{ calendar.color18 }}">{{ calendar.day_18 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color18 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_18 %}">{{ calendar.day_18 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color19 == "off" or calendar.color19 == "rest" %}
+                            <div><a class= "{{ calendar.color19 }}">{{ calendar.day_19 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color19 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_19 %}">{{ calendar.day_19 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color20 == "off" or calendar.color20 == "rest" %}
+                            <div><a class= "{{ calendar.color20 }}">{{ calendar.day_20 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color20 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_20 %}">{{ calendar.day_20 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color21 == "off" or calendar.color21 == "rest" %}
+                            <div><a class= "{{ calendar.color21 }}">{{ calendar.day_21 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color21 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_21 %}">{{ calendar.day_21 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color22 == "off" or calendar.color22 == "rest" %}
+                            <div><a class= "{{ calendar.color22 }}">{{ calendar.day_22 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color22 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_22 %}">{{ calendar.day_22 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color23 == "off" or calendar.color23 == "rest" %}
+                            <div><a class= "{{ calendar.color23 }}">{{ calendar.day_23 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color23 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_23 %}">{{ calendar.day_23 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color24 == "off" or calendar.color24 == "rest" %}
+                            <div><a class= "{{ calendar.color24 }}">{{ calendar.day_24 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color24 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_24 %}">{{ calendar.day_24 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color25 == "off" or calendar.color25 == "rest" %}
+                            <div><a class= "{{ calendar.color25 }}">{{ calendar.day_25 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color25 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_25 %}">{{ calendar.day_25 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color26 == "off" or calendar.color26 == "rest" %}
+                            <div><a class= "{{ calendar.color26 }}">{{ calendar.day_26 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color26 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_26 %}">{{ calendar.day_26 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color27 == "off" or calendar.color27 == "rest" %}
+                            <div><a class= "{{ calendar.color27 }}">{{ calendar.day_27 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color27 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_27 %}">{{ calendar.day_27 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color28 == "off" or calendar.color28 == "rest" %}
+                            <div><a class= "{{ calendar.color28 }}">{{ calendar.day_28 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color28 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_28 %}">{{ calendar.day_28 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color29 == "off" or calendar.color29 == "rest" %}
+                            <div><a class= "{{ calendar.color29 }}">{{ calendar.day_29 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color29 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_29 %}">{{ calendar.day_29 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color30 == "off" or calendar.color30 == "rest" %}
+                            <div><a class= "{{ calendar.color30 }}">{{ calendar.day_30 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color30 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_30 %}">{{ calendar.day_30 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color31 == "off" or calendar.color31 == "rest" %}
+                            <div><a class= "{{ calendar.color31 }}">{{ calendar.day_31 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color31 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_31 %}">{{ calendar.day_31 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color32 == "off" or calendar.color32 == "rest" %}
+                            <div><a class= "{{ calendar.color32 }}">{{ calendar.day_32 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color32 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_32 %}">{{ calendar.day_32 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color33 == "off" or calendar.color33 == "rest" %}
+                            <div><a class= "{{ calendar.color33 }}">{{ calendar.day_33 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color33 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_33 %}">{{ calendar.day_33 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color34 == "off" or calendar.color34 == "rest" %}
+                            <div><a class= "{{ calendar.color34 }}">{{ calendar.day_34 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color34 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_34 %}">{{ calendar.day_34 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color35 == "off" or calendar.color35 == "rest" %}
+                            <div><a class= "{{ calendar.color35 }}">{{ calendar.day_35 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color35 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_35 %}">{{ calendar.day_35 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color36 == "off" or calendar.color36 == "rest" %}
+                            <div><a class= "{{ calendar.color36 }}">{{ calendar.day_36 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color36 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_36 %}">{{ calendar.day_36 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color37 == "off" or calendar.color37 == "rest" %}
+                            <div><a class= "{{ calendar.color37 }}">{{ calendar.day_37 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color37 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_37 %}">{{ calendar.day_37 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color38 == "off" or calendar.color38 == "rest" %}
+                            <div><a class= "{{ calendar.color38 }}">{{ calendar.day_38 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color38 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_38 %}">{{ calendar.day_38 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color39 == "off" or calendar.color39 == "rest" %}
+                            <div><a class= "{{ calendar.color39 }}">{{ calendar.day_39 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color39 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_39 %}">{{ calendar.day_39 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color40 == "off" or calendar.color40 == "rest" %}
+                            <div><a class= "{{ calendar.color40 }}">{{ calendar.day_40 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color40 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_40 %}">{{ calendar.day_40 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color41 == "off" or calendar.color41 == "rest" %}
+                            <div><a class= "{{ calendar.color41 }}">{{ calendar.day_41 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color41 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_41 %}">{{ calendar.day_41 }}</a></div>
+                        {% endif %}
+                        {% if calendar.color42 == "off" or calendar.color42 == "rest" %}
+                            <div><a class= "{{ calendar.color42 }}">{{ calendar.day_42 }}</a></div>                        
+                        {% else %}  
+                            <div><a class= "{{ calendar.color42 }}" href="{% url 'Calendar:connect' slug=calendar.slug_day_42 %}">{{ calendar.day_42 }}</a></div>                       
+                        {% endif %}
+                    {% endif %}                       
+                <div/>
+            {% endfor %}
+
+        </div>
+        
+    </div>
+    <div class="legend2">
+        <div class="leglabel">Color legend :</div>        
+        <div class="styleleg">
+            
+            <div class="strenleg">Strength</div>        
+            <div class="enduleg">Endurance</div>         
+            <div class="stableg">Stabilisation</div>         
+            <div class="restleg">Rest</div>
+
+            
+        </div>    
+    </div>    
+        
+    <div class="legend">
+        
+        {% for calendar in calendars %}
+            <div class= "user" >
+                <h1>{{ calendar.user.first_name }}</h1>
+                <h1>{{ calendar.user.last_name }}</h1>                
+            </div>        
+        {% endfor %}
+        <div class= "logout">                     
+            <form class="logout-link" action="{% url 'login:signup' %}" method="post">
+                {% csrf_token %}
+                <button class="button" type="submit">Logout</button>
+                
+            </form>
+        </div>
+        <div class= "logo">
+            <a  href="{% url 'Calendar:home' %}">
+                <img src="/static/images/logoplanapp3.png" height="90px" />
+            </a>    
+        </div>        
+    </div>
+</body>
+</html>
