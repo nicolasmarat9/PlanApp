@@ -113,6 +113,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "assets")
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'    
 ]
 
 PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR, 'serviceworker.js')
