@@ -55,7 +55,7 @@ pyOpenSSL==17.5.0
 pyparsing==2.4.6
 PyQt5==5.14.1
 PyQt5-sip==12.7.0
-pyqt5-tools==5.13.2.1.6rc1
+
 PyQtChart==5.14.0
 pyqtgraph==0.10.0
 pyserial==3.4
