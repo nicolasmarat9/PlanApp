@@ -29,7 +29,7 @@
 .dailyplan {
 
     width: 100%;
-    margin-top: 160px;
+    margin-top: 200px;
     height: auto;
     background-color: #fff;
     text-align: center;
@@ -44,10 +44,10 @@
     color: #fff;
     width: 100%;
     text-align: center;
-    height: 100px;
+    height: 130px;
     background-color: var(--stren);
     padding: 32px 30px;
-    font-size: 20px;
+    font-size: 25px;
     text-shadow: 0 0.3rem 0.5rem rgba(0,0,0,0.5);
     margin-bottom: 30px;
     box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
@@ -60,10 +60,10 @@
     color: #fff;    
     width: 100%;
     text-align: center;
-    height: 100px;
+    height: 130px;
     background-color: var(--endu);
     padding: 32px 30px;
-    font-size: 20px;
+    font-size: 25px;
     text-shadow: 0 0.3rem 0.5rem rgba(0,0,0,0.5);
     margin-bottom: 30px;
     box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
@@ -76,11 +76,11 @@
     color: #fff;    
     width: 100%;
     text-align: center;
-    height: 100px;
+    height: 130px;
     background-color: var(--stab);
     border-radius: 7px 7px 0 0;
     padding: 32px 30px;
-    font-size: 20px;
+    font-size: 25px;
     text-shadow: 0 0.3rem 0.5rem rgba(0,0,0,0.5);
     margin-bottom: 30px;
     box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
@@ -105,9 +105,9 @@ a:-webkit-any-link {
     margin-bottom:  20px;
     margin-top:  15px;    
     width: 80%;
-    height: 35px;
-    padding: 5px;    
-    font-size: 13px;
+    height: 47px;
+    padding: 8px;    
+    font-size: 17px;
     box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);     
     text-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.5);
 }
@@ -122,9 +122,9 @@ a:-webkit-any-link {
     margin-bottom:  20px;
     margin-top:  15px;    
     width: 80%;
-    height: 35px;
-    padding: 5px;    
-    font-size: 13px;
+    height: 47px;
+    padding: 8px;    
+    font-size: 17px;
     box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
     text-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.5);    
 }
@@ -140,9 +140,9 @@ a:-webkit-any-link {
     margin-bottom:  20px;
     margin-top:  15px;    
     width: 80%;
-    height: 35px;
-    padding: 5px;
-    font-size: 13px;
+    height: 47px;
+    padding: 8px;    
+    font-size: 17px;
     box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
     text-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.5);    
 }
@@ -157,9 +157,9 @@ a:-webkit-any-link {
     margin-bottom:  20px;
     margin-top:  15px;    
     width: 80%;
-    height: 35px;
-    padding: 5px;
-    font-size: 13px;
+    height: 47px;
+    padding: 8px;    
+    font-size: 17px;
     box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
     text-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.5);
     cursor: context-menu;    
@@ -172,18 +172,18 @@ h2 {
 
 .legend{
     width: 32%;
-    height: 125px;
+    height: 170px;
     background-color: #B6B6B6;
     margin-top: -110px;
     margin-left: 68%;
-    border-radius: 0 0 0 15px  ;
+    border-radius: 0 0 0 27px  ;
     box-shadow: 0px 0px 5px 2px rgba(55, 0, 0, 1);
     padding-top: 40px;
     padding-left: 180px;
 }
 .legend2 {
     width: 100%;
-    height: 110px;
+    height: 130px;
     background-color: #fff;
     margin-top: -1232px;
     box-shadow: 0px 0px 15px 1px rgba(55, 0, 0, 0.8);
@@ -191,11 +191,11 @@ h2 {
     padding-left: 15px;    
 }
 .leglabel {
-    font-size: medium;
+    font-size: 30px;
     font-weight: 800; 
     color: black;
     height: 2rem;
-    width: 6.8rem;
+    width: 14rem;
     border-radius: 6px;    
     text-align: center;
     padding-top: 0.6rem;
@@ -212,7 +212,7 @@ h2 {
     align-items: center;
     text-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.5);
     margin-left: 0%;
-    margin-top: 0;
+    margin-top: 18px;
 }
 
 .styleleg div{
@@ -230,7 +230,8 @@ h2 {
     border-color: var(--stren);
     border-right-width: 15px;
     color: black;   
-    font-size: 12px;
+    font-size: 18px;
+    padding-top: 3px;
     font-weight: normal;
     height: 2rem;
     width: 4.4rem;
@@ -245,7 +246,8 @@ h2 {
     border-color: var(--endu);
     border-right-width: 15px;
     color: black;       
-    font-size: 12px;
+    font-size: 18px;
+    padding-top: 3px;
     font-weight: normal;  
     height: 2rem;
     width: 5.2rem;
@@ -260,7 +262,8 @@ h2 {
     border-color: var(--stab);
     border-right-width: 15px;
     color: black;      
-    font-size: 12px;
+    font-size: 18px;
+    padding-top: 3px;
     font-weight: normal;  
     height: 2rem;
     width: 5.8rem;
@@ -276,7 +279,8 @@ h2 {
     border-color: var(--rest);
     border-right-width: 15px;
     color: black;     
-    font-size: 12px;
+    font-size: 18px;
+    padding-top: 3px;
     font-weight: normal;     
     height: 2rem;
     width: 3.3rem;
@@ -288,37 +292,40 @@ h2 {
 
 
 .logo {
-    margin-left: -187px;
-    margin-top: -90px;    
+    margin-left: -190px;
+    margin-top: -148px;
 }
 
 .user {
     color: #fff;
-    margin-top:  -2px;    
-    margin-left: -95px;
-    margin-right: 170px;
+    margin-top:  -17px;    
+    margin-left: -45px;
     border-radius: 20px;
     height: 25px;
-    width: 70px;
+    width:auto;
     padding-top: 4px;
-    font-size: 12px;
+    font-size: 20px;
     text-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.5);
     border-style: none;
     cursor: context-menu;      
 }
+
+
+
 .backtocalendar {
 
     background-color: #F7B36F;
     border: solid;
     border-color: #DD6749;   
-    width: 90px;
-    margin-top: 29px;
-    margin-left: -95px;
+    margin-top:  72px;    
+    margin-left: -45px;
     border-radius: 20px;
-    height: 27px;
-    padding-top: 5px;
-    padding-left: 8px;
-    font-size: 11px;
+    height: 40px;
+    width: 131px;
+    padding-top: 9px;
+    font-size: 14px;
+    padding-left: 18px;
+
     box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);     
     text-shadow: 0 0.1rem 0.3rem rgba(0,0,0,0.5);
 }
