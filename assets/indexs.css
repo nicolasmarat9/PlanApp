@@ -50,7 +50,7 @@ a:-webkit-any-link {
     justify-content: space-between;
     font-size: 25px;
     align-items: center;
-    padding: 5px 123px;
+    padding: 5px 133px;
     text-align: center;
     text-shadow: 0 0.3rem 0.5rem rgba(0,0,0,0.5);
     box-shadow: 0px 0px 5px 1px rgba(55, 0, 0, 1);    
@@ -101,7 +101,6 @@ input[type="text" i] {
 input[type="password" i] {
     -webkit-text-security: disc !important;
     padding: 1px 2px;
-    width: 130px;
     margin-top: 20px;   
     margin-left: 20px;     
 }
