@@ -75,6 +75,10 @@ input {
     width: 250px;
     margin-top: 100px;
     font: 400 22px josefin sans; 
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;    
 }
 
 input[type="submit" i] {
