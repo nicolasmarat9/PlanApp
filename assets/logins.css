@@ -18,7 +18,7 @@
 }
 
 .signup{
-    width: 25rem;
+    width: 35rem;
     height: auto;
     background-color: #fff;
     box-shadow: 0px 0px 15px 3px rgba(55, 0, 0, 1);
@@ -28,52 +28,66 @@
 }
 a:-webkit-any-link {
     color: #427CC0;
+    font-size: 22px;
 
 }
 
 .login{
-    width: 4.2rem;
-    height: 1.2rem;
+    width: 8.2rem;
+    height: auto;
     border-radius: 7px;
-    margin-left: 230px;
-    margin-top: 10px;
+    margin-left: 330px;
     padding-left: 10px;
     padding-top: 3px;      
 }
 .title{
     width: 100%;
-    height: 5rem;
+    height: 7rem;
     color: #fff;
     background-color: #DD6749;
     border-radius: 7px 7px 0 0;
     display: flex;
     justify-content: space-between;
+    font-size: 25px;
     align-items: center;
-    padding: 0 113px;
+    padding: 5px 143px;
     text-align: center;
     text-shadow: 0 0.3rem 0.5rem rgba(0,0,0,0.5);
     box-shadow: 0px 0px 5px 1px rgba(55, 0, 0, 1);    
     
 }
 .helptext{
-    font-size: 10px;
+    font-size: 15px;
     margin-left: 30px;
     margin-top: 40px;
     margin-bottom:  60px;
 
 }
-
+form {
+    margin: 30px;
+    justify-content: center;
+    align-items: center;    
+    
+}
+input {
+    height: 40px;
+    width: 250px;
+    margin-top: 100px;
+    font: 400 22px josefin sans; 
+}
 
 input[type="text" i] {
     padding: 1px 2px;
     margin-top: 30px;
-    margin-left: 90px;    
+    margin-left: 55px;
+    font: 400 22px josefin sans;   
 }
 
 input[type="password" i] {
     padding: 1px 2px;
     margin-top: 30px;
-    margin-left: 95px;    
+    margin-left: 55px;
+    font: 400 22px josefin sans;        
 }
 
 input[type="submit" i] {
@@ -82,12 +96,12 @@ input[type="submit" i] {
     border-radius: 10px;
     align-items: center;
     width: 200px;
-    height: 30px;
-    font-size: larger;
+    height: 44px;
+    font-size: 30px;
     align-items: center;
     justify-content: center;
-    margin-left: 100px;
-    margin-top: 50px;
+    margin-left: 150px;
+    margin-top: 70px;
     box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
     cursor: pointer;      
 }
@@ -98,8 +112,9 @@ input[type="text" i] {
 }
 label {
     margin-left: 40px;
-    margin-top: 20px;
-    margin-bottom:  20px;     
+    margin-top: 40px;
+    margin-bottom:  40px;
+    font-size: 25px;
 }
 ul.list{
     list-style-type: none;
@@ -153,6 +168,5 @@ ul.list li input[type="button"]{
     margin-left: -187px;
     margin-top: -32px;    
 }
-
 
 
