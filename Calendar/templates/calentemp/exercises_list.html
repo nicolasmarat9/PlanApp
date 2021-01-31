@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <title>exercise</title>
-    <link rel="stylesheet" type="text/css"   href="/static/exerdet_list.css"/>
+    <link rel="stylesheet" type="text/css"   href="/static/exerdetail_list.css"/>
 
 </head>
 <body>
@@ -24,7 +24,7 @@
                 <form class= "result" action="{% url 'Calendar:vecro' slug=varislug2 slugb=varislug3 %}" method="post">            
             
                     <div class= "{{ session.slug1 }}">
-                        <h2>{{ session.exercise1 }}</h2>
+                        <h2>{{ session.exercise1|linebreaks }}</h2>
                         {% if session.slug1 == "ex1" %}
                         <hr></hr>                          
                             <div class= "label">                    
@@ -61,7 +61,7 @@
                         {% endif %}    
                     </div>           
                     <div class= "{{ session.slug2 }}">                    
-                        <h2>{{ session.exercise2 }}</h2>
+                        <h2>{{ session.exercise2|linebreaks }}</h2>
                         {% if session.slug2 == "ex2" %}
                         <hr></hr>                            
                             <div class= "label">                    
@@ -96,7 +96,7 @@
                         {% endif %}                  
                     </div>           
                     <div class= "{{ session.slug3 }}">                     
-                        <h2>{{ session.exercise3 }}</h2>
+                        <h2>{{ session.exercise3|linebreaks }}</h2>
                         {% if session.slug3 == "ex3" %}
                         <hr></hr>                            
                             <div class= "label">                    
@@ -131,7 +131,7 @@
                         {% endif %}                  
                     </div>     
                     <div class= "{{ session.slug4 }}">                     
-                        <h2>{{ session.exercise4 }}</h2>
+                        <h2>{{ session.exercise4|linebreaks }}</h2>
                         {% if session.slug4 == "ex4" %}
                         <hr></hr>                            
                             <div class= "label">                    
@@ -166,7 +166,7 @@
                         {% endif %}               
                     </div>     
                     <div class= "{{ session.slug5 }}">                     
-                        <h2>{{ session.exercise5 }}</h2>
+                        <h2>{{ session.exercise5|linebreaks }}</h2>
                         {% if session.slug5 == "ex5" %}
                         <hr></hr>                            
                             <div class= "label">                    
@@ -201,7 +201,7 @@
                         {% endif %}              
                     </div>     
                     <div class= "{{ session.slug6 }}">                     
-                        <h2>{{ session.exercise6 }}</h2>
+                        <h2>{{ session.exercise6|linebreaks }}</h2>
                         {% if session.slug6 == "ex6" %}
                         <hr></hr>                            
                             <div class= "label">                    
@@ -236,7 +236,7 @@
                         {% endif %}                 
                     </div>     
                     <div class= "{{ session.slug7 }}">                     
-                        <h2>{{ session.exercise7 }}</h2>
+                        <h2>{{ session.exercise7|linebreaks }}</h2>
                         {% if session.slug7 == "ex7" %}
                         <hr></hr>                            
                             <div class= "label">                    
@@ -271,7 +271,7 @@
                         {% endif %}                 
                     </div>     
                     <div class= "{{ session.slug8 }}">                     
-                        <h2>{{ session.exercise8 }}</h2>
+                        <h2>{{ session.exercise8|linebreaks }}</h2>
                         {% if session.slug8 == "ex8" %}
                         <hr></hr>                            
                             <div class= "label">                    
@@ -306,7 +306,7 @@
                         {% endif %}                
                     </div>    
                     <div class= "{{ session.slug9 }}">                     
-                        <h2>{{ session.exercise9 }}</h2>
+                        <h2>{{ session.exercise9|linebreaks }}</h2>
                         {% if session.slug9 == "ex9" %}
                         <hr></hr>                            
                             <div class= "label">                    
@@ -341,7 +341,7 @@
                         {% endif %}              
                     </div>     
                     <div class= "{{ session.slug10 }}">                     
-                        <h2>{{ session.exercise10 }}</h2>
+                        <h2>{{ session.exercise10|linebreaks }}</h2>
                         {% if session.slug10 == "ex10" %}
                         <hr></hr>                            
                             <div class= "label">                    
@@ -376,7 +376,7 @@
                         {% endif %}                 
                     </div>     
                     <div class= "{{ session.slug11 }}">                     
-                        <h2>{{ session.exercise11 }}</h2>
+                        <h2>{{ session.exercise11|linebreaks }}</h2>
                         {% if session.slug11 == "ex11" %}
                         <hr></hr>                            
                             <div class= "label">                    
@@ -412,7 +412,7 @@
                         {% endif %}                 
                     </div>     
                     <div class= "{{ session.slug12 }}">                     
-                        <h2>{{ session.exercise12 }}</h2>
+                        <h2>{{ session.exercise12|linebreaks }}</h2>
                         {% if session.slug12 == "ex12" %}
                         <hr></hr>                            
                             <div class= "label">                    
@@ -461,7 +461,7 @@
             
             <div class="strenleg">Strength</div>        
             <div class="enduleg">Endurance</div>         
-            <div class="stableg">Stabilisation</div>         
+            <div class="stableg">Mobility</div>         
             <div class="restleg">Rest</div>
 
             
@@ -497,3 +497,4 @@
     
 </body>
 </html>
+
